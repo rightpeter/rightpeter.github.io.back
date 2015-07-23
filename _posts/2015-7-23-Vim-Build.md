@@ -21,7 +21,7 @@ Place [python.vim](http://www.vim.org/scripts/download_script.php?src_id=21056) 
 Easy! Just open gzipball file with Vim (of course!) and use command :source %.
 All files will be extracted in your Vim home directory.
 
->`$ vim markdown-<version>.vba.gz +"source % | quit!"`
+`$ vim markdown-<version>.vba.gz +"source % | quit!"`
 
 Please, visit
 [https://github.com/hallison/vim-markdown/tree/changes](https://github.com/hallison/vim-markdown/tree/changes) for more information.
