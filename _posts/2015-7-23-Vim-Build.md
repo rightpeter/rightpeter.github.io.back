@@ -1,3 +1,11 @@
+---
+layout: post
+category: note
+tagline: "Vim Build"
+tags: [Vim]
+---
+{% include JB/setup %}
+
 # Tricks in Using Vim
 
 ## [Python syntax highlighting](http://www.vim.org/scripts/script.php?script_id=790)

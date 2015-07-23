@@ -1,3 +1,11 @@
+---
+layout: post
+category: note
+tagline: "Working Effectively With iTerm2"
+tags: [iTerm, terminal, mac]
+---
+{% include JB/setup %}
+
 # Working Effectively With iTerm2
 
 - - - -
