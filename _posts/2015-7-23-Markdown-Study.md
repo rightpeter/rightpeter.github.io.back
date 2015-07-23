@@ -36,4 +36,4 @@ All files will be extracted in your Vim home directory.
 >`$ vim markdown-<version>.vba.gz +"source % | quit!"`
 
 Please, visit
-[https://github.com/hallison/vim-markdown/tree/chages](https://github.com/hallison/vim-markdown/tree/chages) for more information.
+[https://github.com/hallison/vim-markdown/tree/changes](https://github.com/hallison/vim-markdown/tree/changes) for more information.
