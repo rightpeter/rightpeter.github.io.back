@@ -6,8 +6,7 @@ tags: [iTerm, terminal, mac]
 ---
 {% include JB/setup %}
 
-**Reprinted From [http://teohm.com/blog/2012/03/22/working-effectively-with-iterm2/]\
-(http://teohm.com/blog/2012/03/22/working-effectively-with-iterm2/)**
+**Reprinted From [http://teohm.com/blog/2012/03/22/working-effectively-with-iterm2/](http://teohm.com/blog/2012/03/22/working-effectively-with-iterm2/)**
 
 ## Install iTerm2
 
