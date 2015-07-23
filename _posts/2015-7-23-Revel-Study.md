@@ -40,7 +40,9 @@ dependencies.
 ## Get the Revel framework
 
 To get the Revel framework, run
-`go get github.com/revel/revel`
+
+    go get github.com/revel/revel
+
 This command does a couple things:
  * Go uses git to clone the repository into
    **$GOPATH/src/github.com/revel/revel/**
@@ -53,10 +55,14 @@ The **revel** command line tool is used to **build**, **run**, and **package**
 Revel applications.
 
 Use **go get** to install:
-`go get github.com/revel/cmd/revel`
+
+    go get github.com/revel/cmd/revel
+
 Ensure the *$GOPATH/bin* directory is in your PATH so that you can reference
 the command from anywhere.
-`export PATH="$PATH:$GOPATH/bin"`
+
+    export PATH="$PATH:$GOPATH/bin"
+
 Verify that it works:
 
     $ revel help
