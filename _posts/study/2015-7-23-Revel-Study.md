@@ -6,9 +6,7 @@ tags: [Revel, go]
 ---
 {% include JB/setup %}
 
-# Getting Started
-
-## Install Go
+# Install Go
 
 Before you can use Revel, first need to install Go.
 
@@ -29,15 +27,15 @@ the steps to do that:
 
 Now your Go installation is complete.
 
-## Install git and hg
+# Install git and hg
 
-Git and Mercurial are rquired to allow **go get** to clone various
+Git and Mercurial are required to allow **go get** to clone various
 dependencies.
 
  * Installing Git
  * Installing Mercurial
 
-## Get the Revel framework
+# Get the Revel framework
 
 To get the Revel framework, run
 
@@ -85,3 +83,7 @@ Verify that it works:
     Use "revel help [command]" for more information.
 
 - - - -
+
+# Creating a new Revel application
+
+Use the **revel** command line tool to create a new application in your GOPATH and run it:
