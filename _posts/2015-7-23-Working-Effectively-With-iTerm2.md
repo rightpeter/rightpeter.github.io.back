@@ -17,3 +17,5 @@ from http://www.iterm2.com.
 ## Fine-Tune Settings
 
 Launch iTerm, open **iTerm > Preferences** or just 
+
+- - - -
