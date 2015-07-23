@@ -1,8 +1,8 @@
 ---
 layout: post
-category : note 
+category: note
 tagline: "Markdown Study"
-tags : [Markdown]
+tags: [Markdown]
 ---
 {% include JB/setup %}
 
