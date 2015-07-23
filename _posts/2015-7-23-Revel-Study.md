@@ -44,8 +44,10 @@ To get the Revel framework, run
     go get github.com/revel/revel
 
 This command does a couple things:
+
  * Go uses git to clone the repository into
    **$GOPATH/src/github.com/revel/revel/**
+
  * Go transitively finds all of the dependencies and runs **go get** on them as
    well.
 
