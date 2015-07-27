@@ -180,3 +180,39 @@ If the key maps provided by all the Vim plugins start with a same key, then it
 is easier for a user to distinguish between his own key maps and the ones
 privided by plugins. To facilitate this, Vim provides a special keyword that
 can be used in a map command.
+
+- - - -
+
+# Install vim-go
+
+Add `Plugin 'fatih/vim-go'` into your .vimrc. Then type ':PluginInstall' in
+vim.(vundle needed)
+
+**Auto completion**
+
+Auto completion is enabled by default via <C-x><C-o>, to get real-time
+completion (completion by type) install YCM:
+
+    $ cd ~/.vim/bundle
+    $ git clone https://github.com/Valloric/YouCompleteMe.git
+    $ cd YouCompleteMe
+    $ ./install.sh
+
+# New tab from existing mvim window
+
+    $ mvim --remote-tab filename
+
+MacVim first window is a Vim instance with `--servername` set to `VIM`. Each
+subsequent instance is named `VIM1`, `VIM2` and so on. The command above opens
+a new tab in the first instance by default, it's the equivalent of:
+
+    $ mvim --servername VIM --remote-tab .profile
+
+If you want to open a tab in a specific instance, check its name at the top of
+the window. Assuming it's `VIM1`, do:
+
+    $ mvim --servername VIM1 --remote-tab .profile
+
+# MacVim Transparent
+
+Add `set transparency=15` in `~/.gvimrc`
