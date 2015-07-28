@@ -216,3 +216,122 @@ the window. Assuming it's `VIM1`, do:
 # MacVim Transparent
 
 Add `set transparency=15` in `~/.gvimrc`
+
+# Jumping to the start and end of a code block
+
+To jump to the beginning/end of a code block (while, switch, if, function etc),
+user the `[{`/`]}` command. (They will work from anywhere inside the code
+block.)
+
+To jump to the beginning/end of a parenthesis use the `[(`/`)]` command.
+
+To jump to the beginning/end of a file use the `[[`/`]]`
+
+- - - -
+
+# Vimdiff
+
+Reference to [amjith's blog](http://amjith.blogspot.com/2008/08/quick-and-dirty-vimdiff-tutorial.html)
+
+![Vim diff](http://3.bp.blogspot.com/_Klq-3NKFe2s/SMfeDZ9gY9I/AAAAAAAAAaA/zHwt-XJqt0M/s400/vimdiff.png)
+
+**Keyboard Shortcuts:**
+
+`_do_` - Get changes from other windows into the current window.
+
+`_dp_` - Put the changes from current window into the other window.
+
+`]c` - Jump to the next change
+
+`[c` - Jump to the previous change.
+
+Update: Allan commented these two tips that I personally use quite often.
+
+ * If you load up two files in splits (:vs or :sp), you can do _:diffthis_ on
+   each window and achieve a diff of files that were already loaded in buffers
+ * _:diffoff_ can be used to turn off the diff mode.
+
+# Set working directory to the current file
+
+Reference to [wikia](http://vim.wikia.com/wiki/Set_working_directory_to_the_current_file)
+
+## Vim commands
+
+The present working directory can be displayed in Vim with:
+
+    :pwd
+
+To change to the directory of the currently open file (this sets the current
+directory for all windows in Vim):
+
+    :cd %:p:h
+
+You can alse change the directory only for the current window (each window has
+a local current irectory that can be different from Vim's global current
+directory):
+
+    :lcd %:p:h
+
+In these commands, `%` gives the name of the current file, `%:p` gives its full
+path, and `%:p:h` gives its directory (the "head" of the full path).
+
+## Automatically change the current directory
+
+Sometimes it is helpful if your working directory is always the same as the
+file you are editing. To achieve this, put the following in your vimrc:
+
+    set autochdir
+
+That's it! Unfortunately, when this option is set some plugins may not work
+correctly if they make assumptions about the current directory. Sometimes, as
+an alternative to setting `autochdir`, the following command gives better
+results:
+
+    autocmd BufEnter * silent! lcd %:p:h
+
+This autocmd changes the window-local current directory to be the same as the
+directory of the current file. It fails silently to prevent error messages when
+you edit files via ftp or new files. It works better in some cases because the
+autocmd is not nested, and will therefore not fire when switching buffers via
+another autocmd. It will also work in older versions of Vim or versions
+compiled without the 'autochdir' option. Note, however, that there is no easy
+way to test for this autocmd in a script like there is for the 'autochdir'
+option.
+
+Either of these methods will "cd" to the directory of the file in the current
+window, each time you switch to that window.
+
+Using the autocmd method, you could customize when the directory change takes
+place. For example, to not change directory if the file is in `/tmp`:
+
+    autocmd BufEnter * if expand("%:p:h") !~ '^/tmp' | silent! lcd %:p:h |
+    endif
+
+**Caveats**
+
+ * Either of these automatic methods will make loading and saving sessions work
+   incorrectly.
+ * Problems with 'autochdir' and netrw have been reported in the past, though
+   they are fixed now.
+
+## Alternatives
+
+Mapping or command for quick directory change
+
+Rather than automatically change the working directory, you can use a mapping
+or a user command to easily change directory to the file being edited. The
+mapping below maps the keystrokes `,cd`(comma c d) to do that.
+
+    nnoremap ,cd :cd %:p:h<CR>
+
+Alternatively, use:
+
+    nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
+
+to print the directory after changing, so you know where you ended up.
+
+If you prefer, use a command instead of a mapping. The following allows you to
+enter `:CDC` to change directory (it also displays the new directory):
+
+    " CDC = Change to Directory of Current file
+    command CDC cd %:p:h
